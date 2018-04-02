@@ -3,8 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id = "helloWorld" class = "com.tutorialspoint.HelloWorld">
+    <bean id = "helloWorld1" class = "com.tutorialspoint.HelloWorld">
         <property name = "message" value = "Hello World!"/>
     </bean>
+
+    <bean id = "helloWorld2" class = "com.tutorialspoint.HelloWorld" scope="singleton"/>
+
+    <bean id = "helloWorld3" class = "com.tutorialspoint.HelloWorld" scope="prototype"/>
 
 </beans>
