@@ -23,5 +23,14 @@ public class MainApp {
 
         HelloWorld obj3B = (HelloWorld) context.getBean("helloWorld3");
         obj3B.getMessage();
+
+        ExampleBean obj4A = (ExampleBean) context.getBean("exampleBean1");
+        obj4A.getMessage();
+        ExampleBean obj4B = (ExampleBean) context.getBean("exampleBean2");
+        obj4B.getMessage();
+
+        ExampleInitializingBean obj5A = (ExampleInitializingBean) context.getBean("exampleInitializingBean1");
+        obj5A.getMessage();
+
     }
 }
