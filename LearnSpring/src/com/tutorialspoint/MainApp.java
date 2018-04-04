@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld obj1 = (HelloWorld) context.getBean("helloWorld1");
         obj1.getMessage();
@@ -32,5 +32,8 @@ public class MainApp {
         ExampleInitializingBean obj5A = (ExampleInitializingBean) context.getBean("exampleInitializingBean1");
         obj5A.getMessage();
 
+        ExampleDisposableBean obj6A = (ExampleDisposableBean) context.getBean("exampleDisposableBean1");
+        obj6A.getMessage();
+        obj6A.destroy();
     }
 }

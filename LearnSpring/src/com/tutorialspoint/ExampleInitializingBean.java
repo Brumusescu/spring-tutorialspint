@@ -8,7 +8,6 @@ import org.springframework.beans.factory.InitializingBean;
 public class ExampleInitializingBean implements InitializingBean {
     private String message;
 
-    @Override
     public void afterPropertiesSet() throws Exception {
         message = "This is an initialization message with afterPropertiesSet() method";
     }
