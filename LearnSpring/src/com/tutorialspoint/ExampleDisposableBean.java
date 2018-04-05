@@ -11,7 +11,7 @@ public class ExampleDisposableBean implements DisposableBean {
 
     @Override
     public void destroy() throws Exception {
-        message = "Dispose bean";
+        message = "Dispose bean method";
         System.out.println(message);
     }
 }

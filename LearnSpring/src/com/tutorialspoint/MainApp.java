@@ -1,11 +1,12 @@
 package com.tutorialspoint;
 
-import org.springframework.context.ApplicationContext;
+
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
     public static void main(String[] args) throws Exception {
-        ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld obj1 = (HelloWorld) context.getBean("helloWorld1");
         obj1.getMessage();
 
@@ -35,5 +36,10 @@ public class MainApp {
         ExampleDisposableBean obj6A = (ExampleDisposableBean) context.getBean("exampleDisposableBean1");
         obj6A.getMessage();
         obj6A.destroy();
+
+        ExampleInitializeDestroyBean obj7 = (ExampleInitializeDestroyBean) context.getBean("exampleInitializeDestroyBean");
+        obj7.setMessage("Destroy object with registerShutdownHook() method");
+        obj7.getMessage();
+        context.registerShutdownHook();
     }
 }

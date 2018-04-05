@@ -16,6 +16,8 @@
 
     <bean id="exampleDisposableBean1" class="com.tutorialspoint.ExampleDisposableBean" destroy-method="destroy"/>
 
-    <bean id="exampleInitializeDestroyBean" class="com.tutorialspoint.ExampleInitializeDestroyBean" init-method="init" destroy-method="destroy"/>
+    <bean id="exampleInitializeDestroyBean" class="com.tutorialspoint.ExampleInitializeDestroyBean" init-method="init" destroy-method="destroy">
+        <property name = "message" value = "Hello World!"/>
+    </bean>
 
 </beans>
